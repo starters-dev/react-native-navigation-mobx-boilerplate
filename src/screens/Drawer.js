@@ -31,10 +31,12 @@ export default class Drawer extends Component {
         <Button
           title={`Push new screen in Tab 1`}
           onPress={() => {
+            // this is made for iOS based on this issue -> https://github.com/wix/react-native-navigation/issues/1143
             App.rootNavigator.push({
               screen: 'app.PushedScreen',
               title: 'Pushed Screen from Drawer'
             });
+            // for Android you can use this.props.navigator.push({ ... }) 
           }}
         />
       </View>
