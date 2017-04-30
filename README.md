@@ -5,7 +5,7 @@ A simple boilerplate based on MobX (w/ Provider) instead of Redux and [wix/react
 ##### Structure
 - `startTabBasedApp` with `Drawer`
 - `Drawer` supports `.push({...})`s for the first tab through MobX: `Stores.App.rootNavigator.push({...})`. You can change `.rootNavigator` in any component. (based on [this issue](https://github.com/wix/react-native-navigation/issues/1143))
-- `MobX Provider`. Now all components can use `@inject('App', 'Counter', ...)` for accessing stores through `const { App, Counter } = this.props;`. (based on [this](https://github.com/wix/react-native-navigation/issues/187#issuecomment-265946012))
+- `MobX Provider`. Now all components can use `@inject('App', 'Counter', ...)` for accessing stores through `const { App, Counter } = this.props;`. (based on [this comment](https://github.com/wix/react-native-navigation/issues/187#issuecomment-265946012))
 
 ##### What's in package.json
 - `react-native v='0.43.4'`
