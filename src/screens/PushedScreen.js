@@ -12,14 +12,14 @@ import { inject, observer } from 'mobx-react/native';
 import CounterView from './components/Counter';
 
 @inject('Counter') @observer
-export default class MainScreen extends Component {
+export default class PushedScreen extends Component {
   render() {
     const { Counter } = this.props;
 
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Counter
+          Pushed Screen Counter
         </Text>
 
         <CounterView

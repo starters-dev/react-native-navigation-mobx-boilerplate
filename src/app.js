@@ -23,5 +23,11 @@ Navigation.startTabBasedApp({
       selectedIcon: require('../img/one_selected.png'), // iOS only
       title: 'Screen Two'
     }
-  ]
+  ],
+  drawer: {
+    left: {
+      screen: 'app.DrawerScreen'
+    },
+    disableOpenGesture: false
+  },
 });
