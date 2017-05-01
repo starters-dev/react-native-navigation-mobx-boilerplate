@@ -9,6 +9,8 @@ import {
   Button,
 } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
+
+import Constants   from '../global/Constants';
 import CounterView from './components/Counter';
 
 @inject('App', 'Counter') @observer
@@ -33,10 +35,10 @@ export default class Drawer extends Component {
           onPress={() => {
             // this is made for iOS based on this issue -> https://github.com/wix/react-native-navigation/issues/1143
             App.rootNavigator.push({
-              screen: 'app.PushedScreen',
+              screen: Constants.Screens.PUSHED_SCREEN.screen,
               title: 'Pushed Screen from Drawer'
             });
-            // for Android you can use this.props.navigator.push({ ... }) 
+            // for Android you can use this.props.navigator.push({ ... })
           }}
         />
       </View>

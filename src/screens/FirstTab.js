@@ -10,7 +10,8 @@ import {
 } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 
-import NavButtons from '../global/NavButtons';
+import NavButtons  from '../global/NavButtons';
+import Constants   from '../global/Constants';
 import CounterView from './components/Counter';
 
 @inject('App', 'Counter') @observer
@@ -54,7 +55,7 @@ export default class FirstTab extends Component {
           title={`Push new screen`}
           onPress={() => {
             this.props.navigator.push({
-              screen: 'app.PushedScreen',
+              screen: Constants.Screens.PUSHED_SCREEN.screen,
               title: 'Pushed Screen'
             });
           }}
