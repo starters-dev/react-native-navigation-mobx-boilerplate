@@ -1,7 +1,9 @@
 // @flow
 
-import LeftButtons from './LeftButtons';
+import Login        from './Login';
+import WithSideMenu from './WithSideMenu';
 
 export default {
-  Left: LeftButtons,
+  WithSideMenu,
+  Login,
 }

@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -10,13 +9,15 @@ import {
 } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 
-import NavButtons  from '../global/NavButtons';
-import Constants   from '../global/Constants';
-import CounterView from './components/Counter';
+import NavButtons  from '../../global/NavButtons';
+import NavBar      from '../../global/NavBar';
+import Constants   from '../../global/Constants';
+import CounterView from '../components/Counter';
 
-@inject('App', 'Counter') @observer
+@inject('App', 'Account', 'Counter') @observer
 export default class FirstTab extends Component {
-  static navigatorButtons = NavButtons.Left.withSideMenu();
+  static navigatorButtons = NavButtons.WithSideMenu;
+  static navigatorStyle   = NavBar.Default;
 
   constructor(props: {}) {
     super(props);
@@ -37,7 +38,7 @@ export default class FirstTab extends Component {
   }
 
   render() {
-    const { Counter } = this.props;
+    const { Account, Counter } = this.props;
 
     return (
       <View style={styles.container}>
@@ -60,6 +61,24 @@ export default class FirstTab extends Component {
             });
           }}
         />
+
+      <View style={{ marginTop: 20 }}>
+          {
+            Account.authorized ?
+              <View>
+                <Text>{`Logged in as ${Account.current.username}`}</Text>
+                <Button
+                  title={`Log out`}
+                  onPress={() => Account.logout().then(() => Constants.Global.openLoginModalIn(this.props.navigator)) }
+                />
+              </View> :
+              <Button
+                title={`Log in`}
+                onPress={() => Constants.Global.openLoginModalIn(this.props.navigator) }
+              />
+          }
+        </View>
+
       </View>
     );
   }
@@ -76,10 +95,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });

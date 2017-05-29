@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -10,18 +9,38 @@ import {
 } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 
-import Constants   from '../global/Constants';
-import CounterView from './components/Counter';
+import NavButtons  from '../../global/NavButtons';
+import NavBar      from '../../global/NavBar';
+import Constants   from '../../global/Constants';
+import CounterView from '../components/Counter';
 
-@inject('App', 'Counter') @observer
-export default class Drawer extends Component {
+@inject('Counter') @observer
+export default class SecondTab extends Component {
+  static navigatorButtons = NavButtons.WithSideMenu;
+  static navigatorStyle   = NavBar.Default;
+
+  constructor(props: {}) {
+    super(props);
+
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
+  }
+
+  onNavigatorEvent = (event: {}) => {
+    if (event.id === 'menu') {
+      this.props.navigator.toggleDrawer({
+        side: 'left',
+        animated: true
+      });
+    }
+  }
+
   render() {
-    const { App, Counter } = this.props;
+    const { Counter } = this.props;
 
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Drawer
+          Second Tab Counter
         </Text>
 
         <CounterView
@@ -31,14 +50,12 @@ export default class Drawer extends Component {
         />
 
         <Button
-          title={`Push new screen in Tab 1`}
+          title={`Push new screen`}
           onPress={() => {
-            // this is made for iOS based on this issue -> https://github.com/wix/react-native-navigation/issues/1143
-            App.rootNavigator.push({
+            this.props.navigator.push({
               screen: Constants.Screens.PUSHED_SCREEN.screen,
-              title: 'Pushed Screen from Drawer'
+              title: 'Pushed Screen'
             });
-            // for Android you can use this.props.navigator.push({ ... })
           }}
         />
       </View>

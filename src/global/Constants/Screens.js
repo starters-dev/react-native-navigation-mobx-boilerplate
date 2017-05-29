@@ -3,9 +3,18 @@
 import Images from './Images';
 
 export default {
+  LOGIN_SCREEN: {
+    screen : 'app.LoginScreen',
+    title  : 'Login',
+  },
+  PUSHED_SCREEN: {
+    screen : 'app.PushedScreen',
+    title  : 'Pushed Screen',
+  },
   DRAWER: {
     screen : 'app.DrawerScreen',
   },
+
   FIRST_TAB: {
     screen       : 'app.FirstTabScreen',
     title        : 'First Tab',
@@ -19,9 +28,5 @@ export default {
     label        : 'Second Tab',
     icon         : Images.TAB_1,
     selectedIcon : Images.TAB_1_selected,
-  },
-  PUSHED_SCREEN: {
-    screen : 'app.PushedScreen',
-    title  : 'Pushed Screen',
   },
 }

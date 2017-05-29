@@ -9,37 +9,17 @@ import {
   Button,
 } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
-
-import NavButtons  from '../global/NavButtons';
-import Constants   from '../global/Constants';
-import CounterView from './components/Counter';
+import CounterView from '../components/Counter';
 
 @inject('Counter') @observer
-export default class SecondTab extends Component {
-  static navigatorButtons = NavButtons.Left.withSideMenu();
-
-  constructor(props: {}) {
-    super(props);
-
-    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
-  }
-
-  onNavigatorEvent = (event: {}) => {
-    if (event.id === 'menu') {
-      this.props.navigator.toggleDrawer({
-        side: 'left',
-        animated: true
-      });
-    }
-  }
-
+export default class PushedScreen extends Component {
   render() {
     const { Counter } = this.props;
 
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Second Tab Counter
+          Pushed Screen Counter
         </Text>
 
         <CounterView
@@ -52,7 +32,7 @@ export default class SecondTab extends Component {
           title={`Push new screen`}
           onPress={() => {
             this.props.navigator.push({
-              screen: Constants.Screens.PUSHED_SCREEN.screen,
+              screen: 'app.PushedScreen',
               title: 'Pushed Screen'
             });
           }}

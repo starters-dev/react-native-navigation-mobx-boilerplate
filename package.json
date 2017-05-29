@@ -1,6 +1,6 @@
 {
   "name": "ReactNativeNavigationMobxBoilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -8,11 +8,12 @@
   },
   "dependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "mobx": "^3.1.9",
+    "mobx": "^3.1.10",
+    "mobx-persist": "^0.3.3",
     "mobx-react": "^4.1.8",
     "react": "16.0.0-alpha.6",
-    "react-native": "0.43.4",
-    "react-native-navigation": "latest"
+    "react-native": "0.44",
+    "react-native-navigation": "1.1.79"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
