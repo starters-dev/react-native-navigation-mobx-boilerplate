@@ -21,7 +21,7 @@ A simple boilerplate based on MobX (w/ Provider) instead of Redux and [wix/react
 1. Clone this repo: `git clone https://github.com/kanzitelli/react-native-navigation-mobx-boilerplate.git`
 2. Install node modules: `cd react-native-navigation-mobx-boilerplate && npm i -S`
 3. Rename application using [react-native-rename](https://github.com/junedomingo/react-native-rename) if needed.
-4. `react-native run-ios` or `react-native run-android` (and remove the ios/build directory).
+4. `react-native run-ios` or `react-native run-android` (if you have any errors while building the project for iOS, remove the `ios/build` directory or visit [facebook/react-native/issues/7308](https://github.com/facebook/react-native/issues/7308) for more information).
 5. Enjoy :)
 
 Thanks to [@megahertz](https://github.com/megahertz) for sharing the [gist](https://github.com/wix/react-native-navigation/issues/187#issuecomment-265946012) that shows how to create a mobx Provider which can be used with RNN.
