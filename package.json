@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "mobx": "^3.1.10",
+    "mobx": "3.1.15",
     "mobx-persist": "^0.3.3",
-    "mobx-react": "^4.1.8",
+    "mobx-react": "4.2.1",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44",
-    "react-native-navigation": "1.1.79"
+    "react-native-navigation": "1.1.100"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
