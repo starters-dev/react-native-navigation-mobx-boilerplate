@@ -10,12 +10,13 @@ A simple boilerplate based on MobX (w/ Provider) instead of Redux and [wix/react
 - In a new version, structure of the project is more organized 👌
 
 ##### What's in package.json
-- `react '16.0.0-alpha.6'`
-- `react-native '0.44'`
-- `react-native-navigation '1.1.100'`
+- `react '16.0.0-alpha.12'`
+- `react-native '0.46.1'`
+- `react-native-navigation '1.1.134'`
 - `mobx '^3.1.15'`
-- `mobx-react '^4.2.1'`
 - `mobx-persist '^0.3.3'`
+- `mobx-react '^4.2.1'`
+- `flow-bin '^0.47.0'`
 
 # Installation
 1. Clone this repo: `git clone https://github.com/kanzitelli/react-native-navigation-mobx-boilerplate.git`
