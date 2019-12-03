@@ -1,7 +1,6 @@
 ## Archived in favour of [kanzitelli/react-native-navigation-starter](https://github.com/kanzitelli/react-native-navigation-starter)
 
-[kanzitelli/react-native-navigation-starter](https://github.com/kanzitelli/react-native-navigation-starter) is using [React Native Navigation v3](https://github.com/wix/react-native-navigation) with [Redux](https://github.com/reduxjs/redux) and more goodies inside.
-If you would like to use [MobX](https://github.com/mobxjs/mobx) instead of [Redux](https://github.com/reduxjs/redux), consider checking out [ueno-llc/react-native-starter](https://github.com/ueno-llc/react-native-starter).
+[kanzitelli/react-native-navigation-starter](https://github.com/kanzitelli/react-native-navigation-starter) is using [React Native Navigation v3](https://github.com/wix/react-native-navigation) with [MobX-State-Tree](https://github.com/mobxjs/mobx-state-tree) and [Redux](https://github.com/reduxjs/redux) (pick one) and more goodies inside. So this is your case, then check it out 😉
 
 -----
 
